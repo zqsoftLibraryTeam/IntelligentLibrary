@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+	<import resource="applicationContext-hibernate.xml" />
+	<!-- 自动扫面与装配Bean -->
+	<context:component-scan base-package="com.intelligentLibrary"></context:component-scan>
+
+	<!-- 配置sessionFactory -->
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<!-- <property name="configLocation" value="classpath:hibernate.cfg.xml"> 
+			</property> -->
+
+		<property name="dataSource" ref="dataSource"></property>
+		<property name="mappingResources">
+			<list>
+				<value>com/intelligentLibrary/dev/domain/User.hbm.xml</value>
+				<value>com/intelligentLibrary/dev/domain/Book.hbm.xml</value>
+				<value>com/intelligentLibrary/dev/domain/BookSort.hbm.xml</value>
+				<value>com/intelligentLibrary/dev/domain/BorrowInfo.hbm.xml</value>
+				<value>com/intelligentLibrary/dev/domain/BookShell.hbm.xml</value>
+
+				<value>com/intelligentLibrary/dev/domain/Tag.hbm.xml</value>
+
+				<value>com/intelligentLibrary/dev/domain/Weight.hbm.xml</value>
+
+				<value>com/intelligentLibrary/dev/domain/Dept.hbm.xml</value>
+
+				<value>com/intelligentLibrary/dev/domain/Comment.hbm.xml</value>
+
+				<value>com/intelligentLibrary/dev/domain/Keyword.hbm.xml</value>
+
+				<value>com/intelligentLibrary/dev/domain/Occupyinfo.hbm.xml</value>
+
+				<value>com/intelligentLibrary/dev/domain/Desk.hbm.xml</value>
+
+				<value>com/intelligentLibrary/dev/domain/Seat.hbm.xml</value>
+				<value>com/intelligentLibrary/dev/domain/BookBorrowNum.hbm.xml
+				</value>
+				<value>com/intelligentLibrary/dev/domain/Recommandinfo.hbm.xml
+				</value>
+				<value>com/intelligentLibrary/dev/domain/OrderSeatInfo.hbm.xml</value>
+				<value>com/intelligentLibrary/dev/domain/OrderBook.hbm.xml</value>
+				<value>com/intelligentLibrary/recommand/entity/RuleBook.hbm.xml</value>
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.format_sql">true</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+				<prop key="hibernate.show_sql">false</prop>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.MySQLInnoDBDialect
+				</prop>
+				<prop key="hibernate.current_session_context_class">org.springframework.orm.hibernate4.SpringSessionContext
+				</prop>
+				<prop key="connection.autoReconnect">true</prop>
+				<prop key="connection.autoReconnectForPools">true</prop>
+				<prop key="connection.is-connection-validation-required">true</prop>
+				<prop key="myeclipse.connection.profile">qdm166846468.my3w.com</prop>
+			</props>
+
+
+		</property>
+	</bean>
+
+	<!-- 配置声名式事务管理(采用基于注解的方式) -->
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<tx:annotation-driven transaction-manager="transactionManager" />
+
+	<!-- 使用 MethodInvokingJobDetailFactoryBean -->
+	<!--使用MethodInvokingJobDetailFactoryBean你不需要创建只有一行代码且只调用一个方法的job, 你只需要创建真实的业务对象来包装具体的细节的对象。 -->
+	<bean id="methodInvokingJobDetailFactoryBean"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="sendRequest"></property>
+		<property name="targetMethod" value="Everyfiveseconds"></property>
+	</bean>
+
+	<!-- 目标bean -->
+	<bean id="sendRequest"
+		class="com.intelligentLibrary.rfid.SendRequest">
+	</bean>
+
+	<!-- 使用triggers和SchedulerFactoryBean来包装任务 我们已经创建了job details,jobs。 我们同时回顾了允许你调用特定对象上某一个方法的便捷的bean。 
+		当然我们仍需要调度这些jobs。这需要使用triggers和SchedulerFactoryBean来完成。 Quartz自带一些可供使用的triggers。 
+		Spring提供两个子类triggers，分别为CronTriggerBean和SimpleTriggerBean -->
+	<bean id="cornTrigger"
+		class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<!-- 每天一点执行更新 -->
+		<property name="cronExpression" value="*/5 * * * * ? " ></property>
+		<property name="jobDetail" ref="methodInvokingJobDetailFactoryBean"></property>
+	</bean>
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<ref bean="cornTrigger"/>
+			</list>
+		</property>
+	</bean>
+</beans>

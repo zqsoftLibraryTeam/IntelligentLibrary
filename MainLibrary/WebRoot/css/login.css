@@ -1,0 +1,38 @@
+body{
+    background-color: #444444;
+
+}
+.loginBox{
+    width: 420px;
+    height: 230px;
+    padding: 0 20px;
+    border: 1px solid #ffffff;
+    color: #000000;
+
+    background-color:white ;
+    border-radius: 8px;
+    box-shadow: 5px 5px 5px #222;
+
+    font:11px/1.5em 'Microsoft YaHei' ;position: absolute;left:50%;top:50%;margin-left:-210px;margin-top:-115px;
+
+}
+.loginBox h2{height:45px;font-size:22px;font-weight:normal; border-bottom:1px solid black }
+.loginText input{
+    height: 30px;
+    width: 200px;
+}
+.loginText{
+    text-align: center;
+}
+label{
+    font-size: 15px;
+    font-weight:normal;
+}
+.loginSub{
+    text-align: center;
+}
+
+.loginBtn button{
+    width: 80px;
+    margin: 15px  ;
+}

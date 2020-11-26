@@ -1,0 +1,7 @@
+USER/BOOK linux 摆渡人 老人与海中 海与老人 守望的距离 暗时间 BIGDATA 我明白你会来，所以我等 shenme Hadoop权威指南 R语言实战 金融大数据 
+sean F T T F F F F F F F F F 
+root F T T F F F F T F F F F 
+ss F T F T F F F F F F F F 
+aa T F F F F F F F F F F F 
+dd F F T F F T F T T F T F 
+ssssss F F T F T F F F F F F F 

@@ -1,0 +1,340 @@
+@font-face {
+    font-family: 'Glyphicons Halflings';
+
+    src: url('/fonts/glyphicons-halflings-regular.eot');
+    src: url('/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/glyphicons-halflings-regular.woff') format('woff'),
+    url('/fonts/glyphicons-halflings-regular.ttf') format('truetype'),
+    url('/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
+#myCarousel{
+    margin-top:50px;
+}
+#navbar-collapse ul{
+    margin-top:0;
+}
+.carousel-inner img{
+    margin: 0 auto;
+
+}
+.search-box{
+    margin: 60px auto 20px auto;
+
+}
+.search-box label{
+    font-size: 22px;
+    margin-top: -5px;
+}
+.tab-h2{
+    font-size:26px;
+    text-align: center;
+    letter-spacing:1px;
+    color:#0059b2;
+
+}
+.tab-p{
+    font-size:16px;
+    text-align: center;
+    letter-spacing: 1px;
+    color: #999999;
+    margin:20px 0 40px 0;
+}
+.tab1{
+    margin: 30px 0;
+    color: #999;
+}
+.tab1 .text-muted{
+    color: #999;
+
+}
+.media-body p{
+    margin-top: 22px;
+
+}
+.tab1 .media-heading{
+    margin:5px 0 20px 0;
+    color: #0f0f0f;
+    text-align: center;
+
+}
+.tab1 .col{
+    padding: 30px;
+}
+.tab1 img{
+    box-shadow: 0 0 20px grey;
+    width: 130px;
+    height: auto;
+
+}
+.tab2{
+    background-color: #EEEEEE;
+    padding: 60px 20px;
+    text-align: center;
+}
+.tab2 img ,.tab3 img{
+    width: 150px;
+    height: auto;
+    box-shadow: 0 0 50px gray;
+}
+
+.tab3{
+    padding: 60px 20px;
+    text-align: center;
+}
+.tab2-h3{
+    font-size:22px;
+    color: #999;
+}
+.tab2-p{
+    font-size:15px;
+    color: #999;
+}
+.jumbotron{
+    background-color:#3c3c3c;
+    margin: 50px 0 0 0;
+    color: #cccccc;
+}
+.jumbotron h1{
+    font-size: 26px;
+    padding: 0 0 0 20px;
+}
+.jumbotron h4{
+    font-size: 16px;
+    padding: 0 0 0 20px;
+
+}
+#infomation{
+    background-color: #EEEEEE;
+    padding: 40px 0;
+}
+.info-content{
+    background-color: #ffffff;
+    margin:0 0 20px 0;
+    box-shadow: 12px 12px 13px #ccc ;
+    /* box-shadow: ; 设置阴影*/
+}
+.info-content img{
+    margin:12px 0;
+}
+.info-content h4{
+    color: #333333;
+    padding: 2px 0 0 0;
+    font-size: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.info-content p{
+    line-height: 1.6;
+}
+
+#footer{
+    background-color: #666666;
+    border-top:1px solid #cccccc;
+    padding:25px 25px 5px 25px;
+    text-align: center;
+    color: #EEEEEE;
+}
+
+.info-right{
+    background-color: #ffffff;
+    box-shadow: 5px 5px 5px #ccc;
+}
+.info-right blockquote{
+    margin: 0 0 25px 0;
+    padding: 0;
+}
+.info-right h2{
+    font-size: 20px;
+    color: #cccccc;
+}
+
+.info-right-hp{
+    margin: 12px 0;
+    padding: 0;
+}
+.info-right h4{
+    color: #333333;
+    font-size: 16px;
+    padding: 2px 0 0 0;
+    line-height: 1.6;
+}
+
+#case{
+    padding: 40px 0;
+    border-top:1px solid #cccccc;
+
+    text-align: center;
+}
+
+#about{
+    background-color: #eee;
+    padding: 40px 15px;
+}
+
+#about a{
+    color: #0059b2;
+}
+
+#about .about{
+    background-color: #fff;
+    box-shadow: 5px 5px 5px #ccc;
+}
+#about h3{
+    color: #333333;
+    font-size: 18px;
+    border-bottom: 1px solid #eeeeee;
+    padding:20px 0;
+    margin:0 0 10px 0 ;
+}
+#about p{
+    line-height: 2;
+    font-size: 14px;
+}
+
+#case h4{
+    color: #666666;
+}
+
+#case p{
+    color: #666666;
+    line-height: 1.6;
+}
+
+
+.logBox {
+    width: 400px;
+    margin-top: 200px;
+}
+.logBox .logInput{
+    width: 350px;
+}
+
+@media (max-width: 420px) {
+    .logBox {
+        width: 90%;
+    }
+    .logBox .logInput{
+        width: 85%;
+    }
+
+}
+@media (min-width: 768px) {
+    .tab-h2{
+        font-size:26px;
+    }
+    .tab-p{
+        font-size:16px;
+    }
+    .tab2-h3{
+        font-size:22px;
+    }
+    .tab2-p{
+        font-size:15px;
+    }
+    .tab2-text{
+        float: left;
+    }
+    .tab2-img{
+        float: right;
+
+    }
+    .jumbotron h1{
+        font-size: 30px;
+        padding: 0 0 0 20px;
+    }
+    .jumbotron h4{
+        font-size: 16px;
+        padding: 0 0 0 20px;
+
+    }
+    .info-content h4{
+        font-size: 16px;
+    }
+    #about h3{
+
+        font-size: 18px;
+
+    }
+    #about p{
+
+        font-size: 14px;
+    }
+
+
+}
+@media (min-width: 992px) {
+    .tab-h2{
+        font-size:28px;
+    }
+    .tab-p{
+        font-size:17px;
+    }
+    .tab2-h3{
+        font-size:24px;
+    }
+    .tab2-p{
+        font-size:16px;
+    }
+    .jumbotron h1{
+        font-size: 33px;
+        padding: 0 0 0 20px;
+    }
+    .jumbotron h4{
+        font-size: 17px;
+        padding: 0 0 0 20px;
+
+    }
+    .info-content h4{
+        font-size: 18px;
+    }
+    #about h3{
+
+        font-size: 20px;
+
+    }
+    #about p{
+
+        font-size: 15px;
+    }
+
+
+}
+@media (min-width: 1200px) {
+    .tab-h2{
+        font-size:30px;
+    }
+    .tab-p{
+        font-size:18px;
+    }
+    .tab2-h3{
+        font-size:26px;
+    }
+    .tab2-p{
+        font-size:17px;
+    }
+    .jumbotron h1{
+        font-size: 36px;
+        padding: 0 0 0 20px;
+    }
+    .jumbotron h4{
+        font-size: 18px;
+        padding: 0 0 0 20px;
+
+    }
+    .info-content h4{
+        font-size: 20px;
+    }
+    #about h3{
+
+        font-size: 22px;
+
+    }
+    #about p{
+
+        font-size: 16px;
+    }
+	.showNewBooks{
+		heigth:200px
+	}
+}

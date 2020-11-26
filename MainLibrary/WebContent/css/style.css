@@ -1,0 +1,352 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+ul{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+body {
+	font-family: "微软雅黑";
+}
+
+.title {
+	position: absolute;
+	left: 50%;
+	top: 1vh;
+	margin-left: -21px;
+}
+
+.guide {
+	position: absolute;
+	left: 50%;
+	top: 8vh;
+	margin-left: -120px ;
+	font-size: 18px;
+}
+
+.guide .allow {
+	background: url(../img/chair_allow.png) no-repeat center center;
+}
+
+.guide .nallow {
+	background: url(../img/chair_nallow.png) no-repeat center center;
+}
+
+.guide .allowed {
+	background: url(../img/chair_allowed.png) no-repeat center center;
+}
+
+.guide .allow,
+.guide .nallow,
+.guide .allowed {
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	background-size: cover;
+	vertical-align: middle;
+}
+
+.guide>span {
+	margin-right: 20px;
+}
+
+.gird,.gird2 {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 70vw;
+	height: 70vh;
+	border: 4px black double;
+	border-radius: 3px;
+}
+
+.gird{
+	display: flex;
+	flex-direction: column;
+}
+
+
+.gird .topchair,.gird .bottomchair {
+	flex: 1;
+	display: flex;
+}
+
+.gird .topchair>div,.gird .bottomchair>div {
+	flex: 1;
+}
+
+.gird .topchair>div>div,.gird .bottomchair>div>div {
+	position: relative;
+	height:15vh;
+	width: 4.5vw;
+	border: 1px black solid;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.gird .topchair>div>div>span,.gird .bottomchair>div>div>span {
+	cursor: pointer;
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	display: inline-block;
+	background: url(../img/chair_allow.png) no-repeat center center;
+	background-size: cover;
+}
+.gird .topchair>div>div>span.select,.gird .bottomchair>div>div>span.select{
+	background: url(../img/chair_select.png) no-repeat center center;
+	background-size: cover;
+}
+/*03-11添加*/
+.gird .topchair>div>div>span.nallow,.gird .bottomchair>div>div>span.nallow{
+	background: url(../img/chair_nallow.png) no-repeat center center;
+	background-size: cover;
+}
+/*03-11结束*/
+
+
+
+.gird .topchair>div>div>span.selected,.gird .bottomchair>div>div>span.selected{
+	background: url(../img/chair_allowed.png) no-repeat center center;
+	background-size: cover;
+}
+
+.gird .topchair>div>div>span.onechair,.gird .bottomchair>div>div>span.onechair {
+	transform: rotate(-90deg);
+	top: 2vh;
+	left: -39px;
+}
+
+.gird .topchair>div>div>span.twochair,.gird .bottomchair>div>div>span.twochair {
+	transform: rotate(-90deg);
+	top: 7.5vh;
+	left: -39px;
+}
+
+.gird .topchair>div>div>span.threechair,.gird .bottomchair>div>div>span.threechair {
+	transform: rotate(90deg);
+	top: 7.5vh;
+	right: -39px;
+}
+
+.gird .topchair>div>div>span.fourchair,.gird .bottomchair>div>div>span.fourchair {
+	transform: rotate(90deg);
+	top: 2vh;
+	right: -39px;
+}
+
+.gird .topchair>div:last-of-type {
+	flex: 0 0 10%;
+	position: relative;
+	overflow: hidden;
+}
+
+.gird .topchair>div .topdoor {
+	position: absolute;
+	right: -100px;
+	top: -100px;
+	border-radius: 100%;
+	width: 200px;
+	height: 200px;
+	border: 4px black double;
+}
+
+.gird .firstspace,.gird .secondspace{
+	flex: 0 0 5vh;
+	border-top: 2px black dashed;
+	border-bottom: 2px black dashed;
+}
+
+.gird .centerchair {
+	flex: 1;
+	display: flex;
+}
+.gird .centerchair>div{
+	flex: 1;
+	background: url(../img/bookstack_15.png) no-repeat center center;
+	background-size: auto 90%;
+}
+
+.gird .bottomchair {
+	align-items: flex-end;
+}
+
+.gird .bottomchair>div:first-of-type {
+	flex: 0 0 10%;
+	position: relative;
+	overflow: hidden;
+	height: 200px;
+}
+
+.gird .bottomchair>div .bottomdoor {
+	position: absolute;
+	left: -100px;
+	bottom: -100px;
+	border-radius: 100%;
+	width: 200px;
+	height: 200px;
+	border: 4px black double;
+}
+
+
+/*03-08*/
+.gird2{
+	background:url(../img/thumbnail.png) no-repeat center center;
+	background-size: 100% 100%;
+}
+.gird2 .north{
+	position: absolute;
+	top: -10%;
+	left: 50%;
+	margin-left: -38px;
+}
+.gird2 .west{
+	position: absolute;
+	top: 50%;
+	left: -10%;
+	margin-top: -21px;
+}
+.gird2 .south{
+	position: absolute;
+	margin-left: -38px;
+	left: 50%;
+	bottom: -10%;
+}
+.gird2 .east{
+	position: absolute;
+	right:-10%;
+	top: 50%;
+	margin-top: -21px;
+	
+}
+
+.gird2 .area{
+	position: absolute;
+	transition: background-color .5s ease;
+	cursor: pointer;
+}
+.gird2 .area>a{
+	height: inherit;
+	width: inherit;
+	display: block;
+}
+.gird2 .area_one{
+	width: 21.5vw;
+	height: 24vh;
+	top: 0;
+	left: 0;
+}
+
+/*3.11修改*/
+.gird2 .area>span{
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+.gird2 .area_one>span.fill{
+	position: absolute;
+	left: 16vw;
+	bottom: 2vh;
+	background-image: url(../img/guide2_fill.png);
+	background-size: 100% 100%;
+}
+.gird2 .area_two>span.crowd{
+	position: absolute;
+	left: 5.5vw;
+	top: 3vh;
+	background-image: url(../img/guide2_crowd.png);
+	background-size: 100% 100%;
+}
+.gird2 .area_three>span.leisure{
+	position: absolute;
+	left: 5.5vw;
+	top: 2.5vh;
+	background-image: url(../img/guide2_leisure.png);
+	background-size: 100% 100%;
+}
+.gird2 .area_four>span.leisure{
+	position: absolute;
+	left: 6vw;
+	top: 1.8vh;
+	background-image: url(../img/guide2_leisure.png);
+	background-size: 100% 100%;
+}
+/*3.11结束*/
+
+/*.gird2 .area_one:hover{
+	background: rgba(255,0,0,0.6);
+}*/
+
+.gird2 .area_two{
+	width: 20.3vw;
+	height: 27vh;
+	top: 0;
+	left: 30.5vw;
+}
+.gird2 .area_two:hover{
+	background: orange;
+	opacity: 0.6;	
+}
+.gird2 .area_three{
+	width: 21.5vw;
+	height: 23.5vh;
+	left: 0;
+	bottom: 0;
+}
+.gird2 .area_three:hover{
+	background: green;
+	opacity: 0.6;	
+}
+.gird2 .area_four{
+	width: 22vw;
+	height: 24vh;
+	right: 0;
+	bottom: 0;
+}
+
+.gird2 .area_four:hover{
+	background: green;
+	opacity: 0.6;	
+}
+.guide2{
+	position: absolute;
+	right: 0;
+	bottom: -10%;
+}
+
+.guide2 li{
+	font-size: 20px;
+	display: inline-block;
+	margin-right:10px ;
+}
+.guide2 li span{
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	vertical-align: middle;
+	margin-right: 5px;
+	
+}
+.guide2 .fill>span{
+	background: url(../img/guide2_fill.png) no-repeat center center;
+	background-size: 100% 100%;
+	
+}
+.guide2 .crowd>span{
+	background: url(../img/guide2_crowd.png) no-repeat center center;
+	background-size: 100% 100%;
+	
+}
+.guide2 .leisure>span{
+	background: url(../img/guide2_leisure.png) no-repeat center center;
+	background-size: 100% 100%;
+}
+

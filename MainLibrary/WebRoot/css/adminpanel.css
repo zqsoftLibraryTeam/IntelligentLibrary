@@ -1,0 +1,16 @@
+.amymain{
+	display:block;
+}
+.zmymain{
+	display: none;
+}
+*{
+	margin: 0;
+	padding: 0;
+}
+.mainbody{
+	width:95%;
+}
+#a1{
+	padding-top:30px;
+}
